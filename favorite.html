@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagu Favorit Fullscreen</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+    .cover {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5) blur(4px);
+      z-index: -1;
+    }
+    .player {
+      text-align: center;
+      z-index: 1;
+    }
+    .player img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 16px;
+    }
+    .artist {
+      font-size: 16px;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background: #1db954;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <img class="cover" src="white swan.jpg" alt="Background Cover">
+
+  <div class="player">
+    <img src="white swan.jpg" alt="Album Cover">
+    <div class="title">Overheat</div>
+    <div class="artist">White Swan</div>
+    <button class="btn" onclick="togglePlay()">▶️ Play</button>
+    <audio id="player" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+  </div>
+
+  <script>
+    const player = document.getElementById('player');
+    const btn = document.querySelector('.btn');
+
+    // update tombol sesuai status player
+    player.addEventListener('play', () => btn.textContent = "⏸ Pause");
+    player.addEventListener('pause', () => btn.textContent = "▶️ Play");
+
+    function togglePlay() {
+      if (player.paused) {
+        player.play().catch(() => {
+          console.log("Autoplay diblokir, klik tombol untuk mulai musik");
+        });
+      } else {
+        player.pause();
+      }
+    }
+  </script>
+</body>
+</html>

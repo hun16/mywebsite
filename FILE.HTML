@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>muhamad fathur</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+<style>
+* 
+
+{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+        
+    }
+
+    header {
+       background-color: #ccc;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 3px solid #999;  
+    }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    position: relative;
+    background-color: #f5f5f5; 
+    transition: background-color 0.5s;
+    z-index: 1000;
+}
+
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #111;
+    transition: background-color 0.3s;
+}
+
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #555;
+}
+
+
+body.dark-mode {
+    background-color:#555;
+    color: #e0e0e0;
+}
+body.dark-mode header {
+    background-color:#555;
+}
+body.dark-mode nav a {
+    color: #e0e0e0;
+}
+
+
+.mode-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+.mode-switch input {
+    display: none;
+}
+.mode-switch label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: #555;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 0 5px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+.mode-switch label .sun,
+.mode-switch label .moon {
+    font-size: 14px;
+    transition: transform 0.3s;
+}
+.mode-switch input:checked + label {
+    background-color:#555;
+}
+
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: transparent; 
+        padding: 0;
+        z-index: 999;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        margin: 5px 0;
+        text-align: center;
+        color: inherit;
+        background-color: transparent; 
+        border: none;
+        border-radius: 0;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #888; 
+    }
+}
+
+
+    .profile-section {
+     display: flex;
+  align-items: center;
+  padding: 50px 20px; 
+  gap: 40px;
+  justify-content: space-between;
+    }
+
+    .profile-img {
+        width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+  margin-left: 30px;  
+      
+    }
+    
+body.dark-mode {
+    background-color: #555;  
+    color: #fff;             
+}
+
+
+body.dark-mode header {
+    background-color: #555;
+    color: #fff;
+}
+
+
+body.dark-mode .profile-section {
+    background-color:#555;
+    color: #fff;
+}
+
+body.dark-mode .profile-text {
+    background-color:#555;  
+    color: #fff;
+    border-color: #555;     
+}
+
+/* Projects */
+body.dark-mode .project {
+    background-color: #555;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .project h3 {
+    color: #fff;
+}
+
+body.dark-mode .project p {
+    color: #eee;
+}
+
+/* About container */
+body.dark-mode .about-container {
+    background-color:#555;
+    color: #fff;
+    border-color: #555;
+}
+
+
+body.dark-mode footer {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode a {
+    color: #fff;
+}
+body.dark-mode p {
+    color: #fff;
+}
+body.dark-mode h1 {
+    color: #fff;
+}
+  .profile-text {
+   background-color: #f9f9f9;
+  padding: 20px 30px;
+  max-width: 700px;
+  margin-left: 20px;  
+  }
+ @media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .profile-text {
+    margin-left: 0;  
+    width: 100%;
+  }
+}
+.profile-text p {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  
+}
+    .profile-text h1 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+  
+.about-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  border: 10px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  
+}
+
+.about-container h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+  text-align: left; 
+}
+
+.container1 {
+  display: flex;
+  gap: 20px;            
+  flex-wrap: wrap;      
+}
+
+.section1 {
+  flex: 1;              
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+  gap: 12px;
+}
+
+.section1 li {
+  text-align: justify;     
+}
+
+@media (max-width: 768px) {
+  .container1 {
+    flex-direction: column; 
+  }
+}
+
+.tengah {
+  display: flex;
+  justify-content: center;     
+  align-items: center;         
+  flex-direction: row;         
+  gap: 10px;                   
+}
+
+
+.tentang-container{
+  display:flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.tentang-item{
+  width:30%;
+  background-color: #ccc;
+  text-align: center;
+  margin: 7px;
+  padding:20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+}
+.tentang-item img{
+  max-width: 100%;
+}
+.tentang-item button{
+  padding:10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 768px){
+  .tentang-container{
+    flex-direction: column;
+  }
+  .tentang-item{
+    width: 100%;
+  }
+}
+.container1 {
+  width: 80%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.last {
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px; 
+}
+
+
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-weight: 400;
+            
+        }
+        .toggle-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            background-color: #1e40af;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: #0f172a;
+        }
+
+.form-left,
+.form-right {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .last {
+    flex-direction: column;
+  }
+
+  .form-left,
+  .form-right {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+
+.form-right img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+body.dark-mode .form-left,
+body.dark-mode .form-right {
+    background-color:#555;  
+    color: #fff;             
+    border-color: #555;  
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 120px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+footer {
+  background-color: #333; 
+  color: #ccc; 
+  padding: 20px 0;
+}
+
+.panderi {
+  max-width: 960px; 
+  margin: 0 auto; 
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+}
+
+
+.about-me, .recent-posts, .contact, .social {
+  width: 20%; 
+  margin-bottom: 20px; 
+  text-decoration: none;
+  margin: 10px;
+}
+
+h3 {
+  color: #eee; 
+  margin-bottom: 10px; 
+}
+
+ul {
+  list-style: none; 
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px; 
+  list-style: none;
+  
+}
+
+a {
+   
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff; 
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;            
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ddd;
+}
+
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  border-top: 1px solid #333;
+  color:white;
+  font-size: 0.85rem;
+    border-top: 1px solid #555;
+}
+.profile-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  width: 100%;
+}
+
+.profile-image {
+  flex: 1;
+  height: 100%;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.profile-text {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-text h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.profile-text h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.profile-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+<header>
+    <div class="logo">MUHAMAD FATHUR</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="menu">
+      <a href="#">Home</a>
+      <a href="hobi.html">hobi</a>
+      <a href="favorite.html">favorite</a>
+     
+
+<div class="mode-switch">
+    <input type="checkbox" id="mode-toggle">
+    <label for="mode-toggle">
+      <span class="sun">☀️</span>
+      <span class="moon">🌙</span>
+    </label>
+  </div>
+
+    </nav>
+  </header>
+
+  <section class="profile-section">
+    <img src="alexander.jpg" class="profile-img" alt="Foto Profil">
+    <div class="profile-text">
+      <h4>hi there, my name is </h4>
+      <h1> muhamad fathur alexander</h1>
+      <p> and i leverage marketing and tecnologi Lorem ipsum dolor sit amet consectetur adipisicing elit. Id corporis iure qui.</p>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+
+<div class="about-container">
+ 
+  <div class="container1">
+    <div class="section1">
+      
+      <ul>
+        <li><strong>UI/UX Design</strong><br>
+          <br>Saya memiliki kemampuan dalam mendesain antarmuka pengguna (UI) yang modern, rapi, dan mudah dipahami. Tidak hanya soal tampilan, saya juga berfokus pada pengalaman pengguna (UX) agar setiap interaksi terasa nyaman dan 
+          efisien. Tools yang biasa saya gunakan adalah Figma dan Adobe XD </li>
+       
+          <li><strong>Web Design (HTML,CSS,JavaScript)</strong>
+          <br>
+           Selain mendesain tampilan, saya juga mampu menerjemahkannya menjadi halaman website nyata menggunakan HTML, CSS, dan JavaScript.
+            Ini membuat saya memahami batasan teknis desain, sehingga hasilnya lebih realistis dan bisa langsung diterapkan.
+
+         </li>
+        </li>
+      </ul>
+    </div>
+    <div class="section1">
+      
+      <ul>
+        <li><strong>Responsive Design</strong><br>
+
+          <br> Kemampuan membuat desain yang dapat menyesuaikan dengan berbagai ukuran layar (desktop, tablet, smartphone). Dengan teknik responsive design, 
+          saya memastikan tampilan tetap konsisten, profesional, dan mudah diakses di perangkat apa pun.
+        <li><strong> Branding & Visual Identity</strong>
+          <br>Tidak hanya soal desain aplikasi atau website, saya juga memiliki kemampuan dalam membangun identitas visual sebuah produk atau brand.
+           Mulai dari pemilihan warna, tipografi, hingga konsistensi elemen grafis untuk menciptakan citra yang kuat dan mudah dikenali.       
+        </li>
+      </ul>
+    </div>
+   
+    </div>
+   </div>
+</div>
+
+
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            const element = document.getElementById(id);
+            const button = element.nextElementSibling;
+
+            if (element.style.display === "none") {
+                element.style.display = "block";
+                button.textContent = "Sembunyikan";
+            } else {
+                element.style.display = "none";
+                button.textContent = "Tampilkan";
+            }
+        }
+        
+
+const toggle = document.getElementById('mode-toggle');
+toggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
+
+
+</script>
+
+    
+
+
+
+<div class="last">
+  <div class="form-left">
+    <h1>SARAN DAN KRITIK</h1>
+    <p>berikan komentar atas etos kinerja kami supaya kami bisa jauh lebih baik lagi untuk berimprovisasi </p>
+    <form>
+      <label for="name">NAME</label><br>
+      <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+      <label for="email">EMAIL ADDRESS</label><br>
+      <input type="email" id="email" name="email" placeholder="Enter your email address"><br><br>
+      <label for="message">MESSAGE</label><br>
+      <textarea id="message" name="message" placeholder="Enter your message"></textarea><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  
+</div>
+<footer>
+  <div class="panderi">
+    <div class="about-me">
+      <h3>Layanan</h3>
+      <li id="a3">Berlangganan </li>
+      <li id="a3">Kebijakan privasi</li>
+    </div>
+    <div class="recent-posts">
+      <h3>Alamat</h3>
+      <ul>
+        <li id="a3">Jl cendana blok f3 tangerang selatan </li>
+        
+         
+      </ul>
+    </div>
+    <div class="contact">
+      <h3>Email</h3>
+      <li id="a3"><a href="#"> <i class=""></i></a>csf@gmail.com</li>
+      <ul>
+       
+        
+        
+      </ul>
+    </div>
+  <div class="social">
+  <h3>Ikuti Saya</h3>
+  <div class="social-icons">
+    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+</div>
+
+  <div class="copyright">
+    <p>&copy; 2025 Fathur. All Rights Reserved.</p>
+  </div>
+
+</footer>
+
+  
+</div>
+</body>
+</html>
+
